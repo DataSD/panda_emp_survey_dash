@@ -1,16 +1,23 @@
 $(document).ready(function(){
-
   var main = function() {
+    _.templateSettings.variable = "rc";
+    var dashBoxTemplate = _.template($( "script.dashBox" ).html());
     var gauges = new Array();
     $('#dept-search').val('');
     Tabletop.init({ key: '1T4jpCzCSk8WiUHqjRPx7UVMFZdYlTkDpDHZsvt-nRRE',
       callback: function(data, tabletop) {
-          console.log(data);
+        var row;
+        console.log(data.length);
         _.each(data, function(element, index) {
-          // Find box.
-          var el = $('.chart-wrapper:eq(' + index + ')');
-          $('.chart-title', el).html(element['Department']);
-          $('.chart-stage', el).attr('id', 'stageId-' + index);
+          if (index % 4 === 0) {
+            row = $("<div class='row'></div>");
+            $('.main-container').append(row);
+          }
+          $(row).append(dashBoxTemplate({
+            title: element['Department'],
+            index: index
+          }));
+
           gauges.push(new JustGage({
             id: 'stageId-' + index,
             value: element['Final PCT'],
