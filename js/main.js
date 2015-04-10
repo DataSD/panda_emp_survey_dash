@@ -1,10 +1,11 @@
 $(document).ready(function(){
 
-  var step1 = function() {
+  var main = function() {
     var gauges = new Array();
     $('#dept-search').val('');
-    Tabletop.init({ key: '1FAQK4XC11BFXcczEy-Dfhl1dHCgoDMrubz7jg8gi484',
+    Tabletop.init({ key: '1T4jpCzCSk8WiUHqjRPx7UVMFZdYlTkDpDHZsvt-nRRE',
       callback: function(data, tabletop) {
+          console.log(data);
         _.each(data, function(element, index) {
           // Find box.
           var el = $('.chart-wrapper:eq(' + index + ')');
@@ -12,10 +13,10 @@ $(document).ready(function(){
           $('.chart-stage', el).attr('id', 'stageId-' + index);
           gauges.push(new JustGage({
             id: 'stageId-' + index,
-            value: element['Step 1 %'],
+            value: element['Final PCT'],
             min: 0,
             max: 100,
-            title: "Step 1 Completion",
+            title: "Records Compliance",
             label: "%",
             levelColors: ['#bd1f30', '#FFFF00', '#008000']
           }));
@@ -36,17 +37,14 @@ $(document).ready(function(){
         });
       },
       simpleSheet: true,
-      wanted: ['i2']
+      wanted: ['dash']
     });
   };
 
-  var step1fun = function() {
-
-  }
 
 
-  if($('body').hasClass('step1'))
-    step1();
+  if($('body').hasClass('main'))
+    main();
 
 
 
