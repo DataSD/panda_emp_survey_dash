@@ -7,14 +7,14 @@ $(document).ready(function(){
     Tabletop.init({ key: '1T4jpCzCSk8WiUHqjRPx7UVMFZdYlTkDpDHZsvt-nRRE',
       callback: function(data, tabletop) {
         var row;
-        console.log(data.length);
+        //console.log(data);
         _.each(data, function(element, index) {
           if (index % 4 === 0) {
             row = $("<div class='row'></div>");
             $('.main-container').append(row);
           }
           $(row).append(dashBoxTemplate({
-            title: element['Department'],
+            title: element["Department/Agency Name/Commission"],
             index: index
           }));
 
