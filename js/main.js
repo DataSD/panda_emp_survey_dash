@@ -51,7 +51,9 @@ $(document).ready(function(){
 
 
   if($('body').hasClass('main'))
+    setTimeout(function() {
     main();
+    }, 5000);
 
 
 
