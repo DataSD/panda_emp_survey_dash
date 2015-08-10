@@ -54,6 +54,11 @@ body.application hr {
   border-radius: 3px;
   margin-bottom: 10px;
 }
+
+.chart-wrapper {
+  overflow: auto;
+  min-height: 235px;
+}
 .chart-wrapper .chart-title, .box-wrapper .box-title {
   border-bottom: 1px solid #d7d7d7;
   color: #666;
@@ -75,4 +80,9 @@ body.application hr {
   color: #808080;
   font-size: 12px;
   padding: 8px 10px 5px;
+}
+
+
+.rds-link {
+  text-align: center
 }

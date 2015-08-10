@@ -15,6 +15,7 @@ $(document).ready(function(){
           }
           $(row).append(dashBoxTemplate({
             title: element["Department/Agency Name/Commission"],
+            rdsLink: element["RDSLink"] || "",
             index: index
           }));
 
