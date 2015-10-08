@@ -51,13 +51,13 @@
     <div class="col-sm-6 col-md-3">
       <div class="chart-wrapper">
         <div class="chart-title col-sm-12 col-md-12">
-          <%- rc.title %>
+          <strong><%- rc.title %></strong>
         </div>
 
         <div class="chart-stage" id="stageId-<%- rc.index %>"></div>
         <div class="rds-link col-sm-12 col-md-12">
           <% if (rc.rdsLink !== "") { %>
-            <a href="<%- rc.rdsLink %>" title="<%- rc.title %> rds" target="_blank">
+            <a href="<%- rc.rdsLink %>" class = "rdsLink" title="<%- rc.title %> rds" target="_blank">
                Current RDS
             </a>
           <% } %>

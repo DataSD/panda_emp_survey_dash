@@ -86,3 +86,7 @@ body.application hr {
 .rds-link {
   text-align: center
 }
+
+.rds-link a {
+  color: #0098db
+}

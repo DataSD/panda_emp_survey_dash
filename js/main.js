@@ -8,6 +8,7 @@ $(document).ready(function(){
       callback: function(data, tabletop) {
         var row;
         //console.log(data);
+        var gaugeTest = 0;
         _.each(data, function(element, index) {
           if (index % 4 === 0) {
             row = $("<div class='row'></div>");
@@ -19,15 +20,23 @@ $(document).ready(function(){
             index: index
           }));
 
+
           gauges.push(new JustGage({
             id: 'stageId-' + index,
-            value: element['Final PCT'],
+            //value: element['Final PCT'],
+            value: gaugeTest,
+            noGradient: true,
+            levelColorsGradient: false,
             min: 0,
             max: 100,
-            title: "Records Compliance",
+            title: 'Records Compliance',
+            titleFontColor: '#0098db',
             label: "%",
-            levelColors: ['#bd1f30', '#FFFF00', '#008000']
+            levelColors: ['#ffa02f', '#fcd900', '#754C78', '#0098db', '#007b69']
+            // orange, yellow, purple blue, green
           }));
+
+          gaugeTest = gaugeTest + 10;
         });
         $('#dept-search').keyup(function(event) {
           console.log(event);
