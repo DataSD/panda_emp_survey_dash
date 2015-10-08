@@ -23,8 +23,8 @@ $(document).ready(function(){
 
           gauges.push(new JustGage({
             id: 'stageId-' + index,
-            //value: element['Final PCT'],
-            value: gaugeTest,
+            value: element['Final PCT'],
+            //value: gaugeTest,
             noGradient: true,
             levelColorsGradient: false,
             min: 0,
