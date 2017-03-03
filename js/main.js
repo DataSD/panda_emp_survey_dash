@@ -31,7 +31,7 @@ $(document).ready(function(){
             title: 'Survey Participation',
             titleFontColor: '#0098db',
             label: "%",
-            levelColors: ['#ffa02f', '#fcd900', '#754C78', '#0098db', '#007b69']
+            levelColors: ['#ffa02f', '#fcd900', '#754C78', '#0098db']
             // orange, yellow, purple blue, green
           }));
 
