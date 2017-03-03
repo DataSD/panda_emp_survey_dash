@@ -4,7 +4,7 @@ $(document).ready(function(){
     var dashBoxTemplate = _.template($( "script.dashBox" ).html());
     var gauges = new Array();
     $('#dept-search').val('');
-    Tabletop.init({ key: '1T4jpCzCSk8WiUHqjRPx7UVMFZdYlTkDpDHZsvt-nRRE',
+    Tabletop.init({ key: '1NFJTa-u4p8JgqIZk_el9Cy0P5DF_9mHNNsmqIonOln0',
       callback: function(data, tabletop) {
         var row;
         //console.log(data);
@@ -15,21 +15,20 @@ $(document).ready(function(){
             $('.main-container').append(row);
           }
           $(row).append(dashBoxTemplate({
-            title: element["Department/Agency Name/Commission"],
-            rdsLink: element["RDSLink"] || "",
+            title: element["Department"],
             index: index
           }));
 
 
           gauges.push(new JustGage({
             id: 'stageId-' + index,
-            value: element['Final PCT'],
+            value: element['Percent'],
             //value: gaugeTest,
             noGradient: true,
             levelColorsGradient: false,
             min: 0,
             max: 100,
-            title: 'Records Compliance',
+            title: 'Survey Participation',
             titleFontColor: '#0098db',
             label: "%",
             levelColors: ['#ffa02f', '#fcd900', '#754C78', '#0098db', '#007b69']
